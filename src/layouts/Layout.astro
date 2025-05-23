@@ -1,3 +1,8 @@
+---
+import { TwCurrentScreenName } from '../components/widgets/utils'
+import './src/styles/global.css'
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -7,16 +12,9 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
+	<body class="landingpage min-h-screen tracking-tight text-zinc-900 antialiased dark:text-slate-200">
 		<slot />
 	</body>
-</html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+   <TwCurrentScreenName />
+</html>
