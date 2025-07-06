@@ -10,16 +10,16 @@ const Project = () => {
           <SectionTag title='Project' />
           <div>
             <h2 className='text-5xl font-semibold text-white'>App name</h2>
-            <p className='mt-1 text-base text-zinc-600'>UX/UI Design. App Development</p>
+            <p className='mt-1 text-sm text-zinc-500'>UX/UI Design. App Development</p>
           </div>
           <p className='max-w-sm'>
             Fuape is a collection of 1000 funny ape NFTs - unique digital collectibles living on the Ethereum
             blockchain.
           </p>
           <div className='flex space-x-10'>
-            <p className='text-base text-zinc-600'>react</p>
-            <p className='text-base text-zinc-600'>typescript</p>
-            <p className='text-base text-zinc-600'>express</p>
+            <p className='text-sm text-zinc-500'>react</p>
+            <p className='text-sm text-zinc-500'>typescript</p>
+            <p className='text-sm text-zinc-500'>express</p>
           </div>
           <div className='flex gap-5 pt-5'>
             <ProjectLink icon={<FiGithub />}>View Source</ProjectLink>
