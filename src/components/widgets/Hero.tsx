@@ -1,15 +1,16 @@
-import { FiPaperclip } from 'react-icons/fi'
-import { FiCopy } from 'react-icons/fi'
+import { FiPaperclip, FiSend } from 'react-icons/fi'
 import type { ProspWithClassName } from '../../lib/types'
 import { cn } from '../../lib/utils'
 import Button from '../atoms/Button'
+import ProjectLink from '../atoms/ProjectLink'
 import SectionTag from '../atoms/SectionTag'
+import { MY_EMAIL, MY_EMAIL_HREF } from '../../config/constants'
 
 const Hero = () => {
   return (
-    <section className='container min-h-[calc(100dvh-200px)] flex-1 relative py-6 pb-12 lg:pt-8 lg:pb-16'>
+    <section className='relative container min-h-[calc(100dvh-200px)] flex-1 py-6 pb-12 lg:pt-8 lg:pb-16'>
       <div className=''>
-        <div className='sm:mt-10 xl:mt-28'>
+        <div className='sm:mt-10 xl:mt-26'>
           <Intro />
           <Description className='col-start-1 row-start-2' />
         </div>
@@ -23,15 +24,15 @@ export const Intro = (props: ProspWithClassName) => {
     <div className={cn(props.className)}>
       <SectionTag uppercase={false} title="Hello, I'm" />
       <h1
-        className='gradient-text xl:mt-1 -ml-1 text-7xl font-extrabold uppercase -tracking-wider sm:text-8xl md:text-7xl lg:text-[110px]'
+        className='gradient-text -ml-1 text-7xl font-extrabold -tracking-wider uppercase sm:text-8xl md:text-7xl lg:text-[110px] xl:mt-1'
         style={{ lineHeight: 0.77 }}
       >
         Hasan <br /> Mahmud
       </h1>
 
-      <div className='mt-1 flex items-end gap-1.5'>
-        <p className='text-2xl font-semibold tracking-wide text-accent'>Softwere Developer</p>
-        <div className='mb-2 h-1 w-1 bg-accent/70'></div>
+      <div className='mt-1 flex items-baseline gap-0.5'>
+        <p className='text-accent text-2xl font-semibold tracking-wide'>Softwere Developer</p>
+        <div className='bg-accent/70 mb- h-1 w-1'></div>
       </div>
     </div>
   )
@@ -39,24 +40,35 @@ export const Intro = (props: ProspWithClassName) => {
 const Description = (props: ProspWithClassName) => {
   return (
     <div className={cn(props.className)}>
-      <div className='mt-4 text-gray-200 text-lg leading-normal tracking-wide max-w-md space-y-5 lg:max-w-2xl'>
+      <div className='mt-6 max-w-md space-y-5 text-lg leading-normal tracking-wide text-gray-200 lg:max-w-xl'>
         <p>
-          Hi, I’m Hasan — a frontend developer with over 3 years of freelance experience. I specialize in building
-          modern websites with React and crafting cross-platform mobile apps using Flutter and React Native.
+          I’m Hasan — a frontend developer based in Bangladesh with 3+ years of hands-on experience delivering
+          high-quality web and mobile applications as a freelancer.
         </p>
 
-        <p>I love bringing ideas to life through clean code, thoughtful design, and smooth user experiences.</p>
+        <p>
+          I specialize in <span className='decoration-text underline'>React</span>,{' '}
+          <span className='decoration-text underline'>React Native</span> and{' '}
+          <span className='decoration-text underline'>Flutter</span> with a strong focus on performance, accessibility,
+          and clean UI design.
+        </p>
 
-        <p>I’m currently freelancing while actively looking for a full-time opportunity.</p>
+        <p>
+          I'm currently freelancing and actively seeking a full-time opportunity where I can contribute to meaningful
+          products and grow with a team.
+        </p>
       </div>
-      <div className='mt-8 flex gap-4'>
-        <Button varient='solid-green' icon={<FiPaperclip size={16} />}>
+      <div className='outlin mt-10 inline-flex flex-wrap justify-center gap-6'>
+        <Button varient='solid-green' icon={<FiPaperclip size={18} />}>
           View my resume
         </Button>
 
-        <Button className='px-1 normal-case' varient='text' icon={<FiCopy size={18} />}>
-          hasansujon786@gmail.com
-        </Button>
+        <ProjectLink href={MY_EMAIL_HREF}>
+          <div className='flex items-center gap-1.5 text-base'>
+            <FiSend size={18} />
+            {MY_EMAIL}
+          </div>
+        </ProjectLink>
       </div>
     </div>
   )

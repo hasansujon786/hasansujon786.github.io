@@ -8,10 +8,9 @@ interface Props {
 }
 const HeaderLink = (props: Props) => {
   return (
-    <li>
+    <li className='px-4 py-2'>
       <a
-        className='flex items-center px-4 py-2
-        text-sm font-semibold tracking-wide transition duration-150 ease-in-out hover:text-accent-light'
+        className='hover:text-accent-light text-sm font-medium uppercase transition duration-150 ease-in-out'
         href={props.path}
       >
         {props.children}
@@ -23,7 +22,7 @@ const HeaderLink = (props: Props) => {
 const Header = (props: {}) => {
   return (
     <header
-      className='z-40 sticky top-0 mx-auto w-full flex-none border-b bg-ground/80 dark:border-b-0 md:backdrop-blur-sm'
+      className='bg-ground/80 sticky top-0 z-40 mx-auto w-full flex-none border-b md:backdrop-blur-sm dark:border-b-0'
       id='header'
     >
       <div className='container py-1'>
@@ -34,7 +33,7 @@ const Header = (props: {}) => {
             </a>
           </div>
           <nav
-            className='hidden h-screen w-full items-center dark:text-slate-200 md:flex md:h-auto md:w-auto'
+            className='hidden h-screen w-full items-center md:flex md:h-auto md:w-auto dark:text-slate-200'
             aria-label='Main navigation'
           >
             <ul className='flex w-full flex-col items-center pt-8 text-xl md:w-auto md:flex-row md:self-center md:pt-0 md:text-base'>

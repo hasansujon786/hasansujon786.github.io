@@ -1,24 +1,17 @@
 ---
-import CallToAction from '../components/widgets/CallToAction';
-import Footer from '../components/widgets/Footer';
-import Header from '../components/widgets/Header';
-import Hero from '../components/widgets/Hero';
-import Project from '../components/widgets/Project';
-import Layout from '../layouts/Layout.astro';
+import CallToAction from '../components/widgets/CallToAction'
+import Footer from '../components/widgets/Footer'
+import Header from '../components/widgets/Header'
+import Hero from '../components/widgets/Hero'
+import ProjectShowcase from '../components/widgets/Project'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-  <main >
+  <main>
     <Header />
     <Hero />
-
-    <div class='container'>
-      <div class='divide-y-2 divide-zinc-800 border-y-2 border-zinc-800'>
-        <Project />
-        <Project />
-      </div>
-    </div>
-
+    <ProjectShowcase />
     <CallToAction />
     <Footer />
   </main>
