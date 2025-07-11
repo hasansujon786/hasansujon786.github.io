@@ -59,16 +59,16 @@ const Description = (props: ProspWithClassName) => {
         </p>
       </div>
       <div className='outlin mt-10 inline-flex flex-wrap justify-center gap-6'>
-        <Button varient='solid-green' icon={<FiPaperclip size={18} />}>
+        <Button className='px-8' varient='solid-green' icon={<FiPaperclip size={18} />}>
           View my resume
         </Button>
 
-        <ProjectLink href={MY_EMAIL_HREF}>
-          <div className='flex items-center gap-1.5 text-base'>
-            <FiSend size={18} />
-            {MY_EMAIL}
-          </div>
-        </ProjectLink>
+        {/* <ProjectLink href={MY_EMAIL_HREF}> */}
+        {/*   <div className='flex items-center gap-1.5 text-base'> */}
+        {/*     <FiSend size={18} /> */}
+        {/*     {MY_EMAIL} */}
+        {/*   </div> */}
+        {/* </ProjectLink> */}
       </div>
     </div>
   )
