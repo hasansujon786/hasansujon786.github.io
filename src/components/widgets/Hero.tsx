@@ -1,43 +1,34 @@
-import { FiPaperclip, FiSend } from 'react-icons/fi'
+import { useScroll } from 'motion/react'
+import { useRef } from 'react'
+import { FiPaperclip } from 'react-icons/fi'
 import type { ProspWithClassName } from '../../lib/types'
 import { cn } from '../../lib/utils'
 import Button from '../atoms/Button'
-import ProjectLink from '../atoms/ProjectLink'
 import SectionTag from '../atoms/SectionTag'
-import { MY_EMAIL, MY_EMAIL_HREF } from '../../config/constants'
-
-const Hero = () => {
-  return (
-    <section className='relative container min-h-[calc(100dvh-200px)] flex-1 py-6 pb-12 lg:pt-8 lg:pb-16'>
-      <div className=''>
-        <div className='sm:mt-10 xl:mt-26'>
-          <Intro />
-          <Description className='col-start-1 row-start-2' />
-        </div>
-      </div>
-    </section>
-  )
-}
+import { AuroraText } from './aurora-text'
+import ScrollHero from './ScrollHero'
 
 export const Intro = (props: ProspWithClassName) => {
   return (
     <div className={cn(props.className)}>
       <SectionTag uppercase={false} title="Hello, I'm" />
-      <h1
-        className='gradient-text -ml-1 text-7xl font-extrabold -tracking-wider uppercase sm:text-8xl md:text-7xl lg:text-[110px] xl:mt-1'
+      <div
+        className='-ml-1 text-7xl font-extrabold -tracking-wider uppercase sm:text-8xl md:text-7xl lg:text-[110px] xl:mt-1'
         style={{ lineHeight: 0.77 }}
       >
-        Hasan <br /> Mahmud
-      </h1>
+        <AuroraText>Hasan</AuroraText>
+        <br />
+        <AuroraText>Mahmud</AuroraText>
+      </div>
 
       <div className='mt-1 flex items-baseline gap-0.5'>
-        <p className='text-accent text-2xl font-semibold tracking-wide'>Softwere Developer</p>
+        <p className='text-accent z-10 text-2xl font-semibold tracking-wide'>Softwere Developer</p>
         <div className='bg-accent/70 mb- h-1 w-1'></div>
       </div>
     </div>
   )
 }
-const Description = (props: ProspWithClassName) => {
+export const Description = (props: ProspWithClassName) => {
   return (
     <div className={cn(props.className)}>
       <div className='mt-6 max-w-md space-y-5 text-lg leading-normal tracking-wide text-gray-200 lg:max-w-xl'>
@@ -71,6 +62,35 @@ const Description = (props: ProspWithClassName) => {
         {/* </ProjectLink> */}
       </div>
     </div>
+  )
+}
+
+const Hero = () => {
+  const container = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end end'],
+  })
+
+  return (
+    <section ref={container} className=''>
+      <ScrollHero.Hero scrollYProgress={scrollYProgress}>
+        <div className='relative container min-h-[calc(100dvh-200px)] flex-1 py-6 pb-12 lg:pt-8 lg:pb-16'>
+          <div className=''>
+            <div className='sm:mt-10 xl:mt-26'>
+              <Intro />
+              <Description className='col-start-1 row-start-2' />
+            </div>
+          </div>
+        </div>
+      </ScrollHero.Hero>
+
+      <ScrollHero.Content scrollYProgress={scrollYProgress}>
+        <div>
+          <h1 className='text-7xl'>lorem</h1>
+        </div>
+      </ScrollHero.Content>
+    </section>
   )
 }
 

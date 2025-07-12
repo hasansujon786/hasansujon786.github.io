@@ -5,6 +5,7 @@ import type React from 'react'
 import imgSmacrCV from '../../assets/smart-cv.png'
 import imgSmacrQR from '../../assets/smart-qr.png'
 import imgSaweria from '../../assets/saweria.co.png'
+import { AuroraText } from './aurora-text'
 
 interface ProjectProps {
   owner: string
