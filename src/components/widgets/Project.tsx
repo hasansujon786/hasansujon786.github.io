@@ -5,7 +5,6 @@ import type React from 'react'
 import imgSmacrCV from '../../assets/smart-cv.png'
 import imgSmacrQR from '../../assets/smart-qr.png'
 import imgSaweria from '../../assets/saweria.co.png'
-import { AuroraText } from './aurora-text'
 
 interface ProjectProps {
   owner: string
@@ -73,24 +72,24 @@ const projects: ProjectProps[] = [
 
 const ProjectShowcase = () => {
   return (
-    <div className='container'>
+    <div id='project_showcase' className='container'>
       <div className='divide-y-2 divide-zinc-800 border-y-2 border-zinc-800'>
         {projects.map((p) => (
-          <Project {...p} />
+          <Project key={p.title} {...p} />
         ))}
       </div>
     </div>
   )
 }
 
-const Project = ({ owner, title, subtitle, details, tags, links, image }: ProjectProps) => {
+export const Project = ({ owner, title, subtitle, details, tags, links, image }: ProjectProps) => {
   return (
     <div className='flex flex-col gap-8 py-12 lg:flex-row lg:py-24'>
       <section className='w-full lg:w-1/3'>
         <div className='space-y-4 lg:mt-6'>
           <SectionTag uppercase={true} title={owner} />
           <div>
-            <h2 className='text-5xl font-semibold text-white'>{title}</h2>
+            <h2 className='text-5xl text-white md:text-6xl'>{title}</h2>
             <p className='mt-1 text-base text-zinc-500'>{subtitle}</p>
           </div>
           <div className='space-y-2'>
@@ -107,7 +106,7 @@ const Project = ({ owner, title, subtitle, details, tags, links, image }: Projec
         </div>
       </section>
       <section className='flex-1 justify-end lg:flex'>
-        <div className='bg-level-100 ring-accent-dark aspect-[1.3333333333] w-full overflow-hidden rounded-lg ring-3'>
+        <div className='bg-level-100 ring-accent-dark aspect-video w-full overflow-hidden rounded-lg ring-3'>
           <img className='h-full w-full object-cover' {...image} />
         </div>
       </section>

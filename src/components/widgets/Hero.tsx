@@ -6,12 +6,15 @@ import { cn } from '../../lib/utils'
 import Button from '../atoms/Button'
 import SectionTag from '../atoms/SectionTag'
 import { AuroraText } from './aurora-text'
+import { MyStack } from './MyStack'
 import ScrollHero from './ScrollHero'
 
 export const Intro = (props: ProspWithClassName) => {
   return (
     <div className={cn(props.className)}>
-      <SectionTag uppercase={false} title="Hello, I'm" />
+      <span className='relative z-10'>
+        <SectionTag uppercase={false} title="Hello, I'm" />
+      </span>
       <div
         className='-ml-1 text-7xl font-extrabold -tracking-wider uppercase sm:text-8xl md:text-7xl lg:text-[110px] xl:mt-1'
         style={{ lineHeight: 0.77 }}
@@ -22,8 +25,8 @@ export const Intro = (props: ProspWithClassName) => {
       </div>
 
       <div className='mt-1 flex items-baseline gap-0.5'>
-        <p className='text-accent z-10 text-2xl font-semibold tracking-wide'>Softwere Developer</p>
-        <div className='bg-accent/70 mb- h-1 w-1'></div>
+        <p className='text-accent z-10 text-2xl font-semibold tracking-wide'>Frontend Developer</p>
+        <div className='bg-accent-dark h-1 w-1'></div>
       </div>
     </div>
   )
@@ -31,9 +34,9 @@ export const Intro = (props: ProspWithClassName) => {
 export const Description = (props: ProspWithClassName) => {
   return (
     <div className={cn(props.className)}>
-      <div className='mt-6 max-w-md space-y-5 text-lg leading-normal tracking-wide text-gray-200 lg:max-w-xl'>
+      <div className='mt-3 max-w-md space-y-3 text-sm leading-normal tracking-wide text-gray-200 md:text-base lg:max-w-xl lg:space-y-5 lg:text-lg'>
         <p>
-          I’m Hasan — a frontend developer based in Bangladesh with 3+ years of hands-on experience delivering
+          I’m Hasan — a software developer based in Bangladesh with 3+ years of hands-on experience delivering
           high-quality web and mobile applications as a freelancer.
         </p>
 
@@ -75,20 +78,21 @@ const Hero = () => {
   return (
     <section ref={container} className=''>
       <ScrollHero.Hero scrollYProgress={scrollYProgress}>
-        <div className='relative container min-h-[calc(100dvh-200px)] flex-1 py-6 pb-12 lg:pt-8 lg:pb-16'>
+        <div className='container mt-16 flex flex-1 sm:mt-20 md:mt-24 lg:mt-0 lg:items-center'>
           <div className=''>
-            <div className='sm:mt-10 xl:mt-26'>
-              <Intro />
-              <Description className='col-start-1 row-start-2' />
-            </div>
+            <Intro />
+            <Description className='col-start-1 row-start-2' />
           </div>
         </div>
       </ScrollHero.Hero>
 
       <ScrollHero.Content scrollYProgress={scrollYProgress}>
-        <div>
-          <h1 className='text-7xl'>lorem</h1>
+        <div className='container pt-20 md:pt-32 2xl:pt-42'>
+          <h1 className='text-5xl text-white md:text-6xl'>Technology Stack</h1>
         </div>
+        <MyStack />
+
+        <div className='from-level-100 to-ground relative h-screen flex-1 bg-gradient-to-b'></div>
       </ScrollHero.Content>
     </section>
   )

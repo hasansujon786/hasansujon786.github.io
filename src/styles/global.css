@@ -22,6 +22,8 @@
   --font-sans: 'Poppins', sans-serif;
 
   --animate-aurora: aurora 8s ease-out infinite alternate;
+  --animate-marquee: marquee var(--duration, 20s) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration, 20s) infinite linear;
 }
 
 @utility container {
@@ -53,6 +55,24 @@
   to {
     background-position: 0;
     transform: rotate(-5deg) scale(0.9);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
   }
 }
 

@@ -22,7 +22,7 @@ const HeaderLink = (props: Props) => {
 const Header = (props: {}) => {
   return (
     <header
-      className='bg-ground/80 sticky top-0 z-40 mx-auto w-full flex-none border-b md:backdrop-blur-sm dark:border-b-0'
+      className='bg-ground/80 fixed top-0 z-40 mx-auto w-full flex-none border-b md:backdrop-blur-sm dark:border-b-0'
       id='header'
     >
       <div className='container py-1'>
@@ -37,7 +37,7 @@ const Header = (props: {}) => {
             aria-label='Main navigation'
           >
             <ul className='flex w-full flex-col items-center pt-8 text-xl md:w-auto md:flex-row md:self-center md:pt-0 md:text-base'>
-              <HeaderLink path='#'>Projects</HeaderLink>
+              <HeaderLink path='#project_showcase'>Projects</HeaderLink>
               <HeaderLink path='#'>Github</HeaderLink>
               <div className='ml-3 flex items-center gap-4'>
                 <Button varient='translusant' size='sm' icon={<FiSend className='text-xs' />}>
