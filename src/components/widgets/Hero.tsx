@@ -1,5 +1,5 @@
 import { useScroll } from 'motion/react'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { FiPaperclip } from 'react-icons/fi'
 import type { ProspWithClassName } from '../../lib/types'
 import { cn } from '../../lib/utils'
@@ -75,8 +75,26 @@ const Hero = () => {
     offset: ['start start', 'end end'],
   })
 
+  // Hide page loader
+  useEffect(() => {
+    const el = document.querySelector('.page_loader')
+    document.querySelectorAll('.animate-in-blur').forEach((el) => el?.classList.add('animate-in-blur-enter'))
+
+    if (!el) return
+    el.classList.add('page_loader_exit')
+
+    const handleAnimationEnd = () => el.remove()
+
+    el.addEventListener('animationend', handleAnimationEnd)
+
+    // Clean up
+    return () => {
+      el.removeEventListener('animationend', handleAnimationEnd)
+    }
+  }, [])
+
   return (
-    <section ref={container} className=''>
+    <section ref={container}>
       <ScrollHero.Hero scrollYProgress={scrollYProgress}>
         <div className='container mt-16 flex flex-1 sm:mt-20 md:mt-24 lg:mt-0 lg:items-center'>
           <div className=''>

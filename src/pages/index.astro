@@ -3,16 +3,40 @@ import CallToAction from '../components/widgets/CallToAction'
 import Footer from '../components/widgets/Footer'
 import Header from '../components/widgets/Header'
 import Hero from '../components/widgets/Hero'
+import PageLoader from '../components/widgets/PageLoader.astro'
 import ProjectShowcase from '../components/widgets/Project'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-  <main>
+  <main class=''>
     <Header />
-    <Hero client:load />
+    <PageLoader />
+    <section class='animate-in-blur animate-in-from-bottom min-h-[200dvh]'>
+      <Hero client:only='react' />
+    </section>
     <ProjectShowcase />
     <CallToAction />
     <Footer />
   </main>
 </Layout>
+
+<style is:global>
+  .animate-in-blur {
+    filter: blur(8px);
+  }
+  .animate-in-blur-enter {
+    animation: blur-fade-in 300ms ease-out forwards;
+  }
+
+  .animate-in-blur.animate-in-from-bottom {
+    transform: translateY(30px);
+  }
+
+  @keyframes blur-fade-in {
+    to {
+      filter: blur(0);
+      transform: translateY(0) translateX(0);
+    }
+  }
+</style>

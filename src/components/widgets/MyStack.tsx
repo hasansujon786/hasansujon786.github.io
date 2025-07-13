@@ -1,7 +1,5 @@
 import { Marquee } from './marquee'
 
-const images = import.meta.glob('/src/assets/stacks/*.svg', { eager: true, as: 'url' })
-
 const stacks = {
   firstRow: [
     { title: 'Bootstrap', img: 'bootstrap.svg' },
@@ -45,6 +43,12 @@ const StackIcon = ({ url, title }: { url: string; title: string }) => {
     </div>
   )
 }
+
+const images: Record<string, string> = import.meta.glob('/src/assets/stacks/*.svg', {
+  query: '?url',
+  import: 'default',
+  eager: true,
+})
 
 export function MyStack() {
   const firstRow = stacks.firstRow.map((stack) => ({

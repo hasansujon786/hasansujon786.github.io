@@ -84,7 +84,7 @@ const ProjectShowcase = () => {
 
 export const Project = ({ owner, title, subtitle, details, tags, links, image }: ProjectProps) => {
   return (
-    <div className='flex flex-col gap-8 py-12 lg:flex-row lg:py-24'>
+    <div className='animate-in-blur animate-in-from-bottom flex flex-col gap-8 py-12 lg:flex-row lg:py-24'>
       <section className='w-full lg:w-1/3'>
         <div className='space-y-4 lg:mt-6'>
           <SectionTag uppercase={true} title={owner} />

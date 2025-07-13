@@ -2,7 +2,7 @@ import { MY_EMAIL, MY_EMAIL_HREF } from '../../config/constants'
 
 const CallToAction = (props: {}) => {
   return (
-    <div className='cta-wrapper'>
+    <div className='cta-wrapper animate-in-blur animate-in-from-bottom'>
       <div className='container my-10'>
         <div className='mx-auto max-w-4xl rounded-3xl py-12 text-center'>
           <p className='text-accent text-base font-extrabold tracking-wide uppercase sm:text-xl'>

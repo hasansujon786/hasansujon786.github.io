@@ -1,0 +1,18 @@
+<div class='page_loader bg-ground fixed inset-0 z-50 flex h-screen items-center justify-center text-white'>
+  <h1 class='animate-pulse text-3xl'>Loading...</h1>
+</div>
+
+<style>
+  .page_loader_exit {
+    animation: fadeOut 300ms ease-out forwards;
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+</style>
