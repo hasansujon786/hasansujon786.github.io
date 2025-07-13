@@ -93,13 +93,17 @@ export const Project = ({ owner, title, subtitle, details, tags, links, image }:
             <p className='mt-1 text-base text-zinc-500'>{subtitle}</p>
           </div>
           <div className='space-y-2'>
-            {details.map((detail) => (
-              <p className='max-w-sm'>{detail}</p>
+            {details.map((detail, i) => (
+              <p key={i} className='max-w-sm'>
+                {detail}
+              </p>
             ))}
           </div>
           <div className='flex space-x-10'>
-            {tags.map((tag) => (
-              <p className='text-sm text-zinc-500'>{tag}</p>
+            {tags.map((tag, i) => (
+              <p key={i} className='text-sm text-zinc-500'>
+                {tag}
+              </p>
             ))}
           </div>
           <div className='flex gap-5 pt-5'>{links}</div>
