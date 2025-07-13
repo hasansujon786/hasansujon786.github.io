@@ -77,19 +77,20 @@ const Hero = () => {
 
   // Hide page loader
   useEffect(() => {
-    const el = document.querySelector('.page_loader')
-    document.querySelectorAll('.animate-in-blur').forEach((el) => el?.classList.add('animate-in-blur-enter'))
+    const loader = document.querySelector('.page-loader')
+    document.querySelectorAll('.animate-blur-in').forEach((el) => el?.classList.add('animate-blur-in-enter'))
+    document.querySelectorAll('.animate-slide-in').forEach((el) => el?.classList.add('animate-slide-in-enter'))
 
-    if (!el) return
-    el.classList.add('page_loader_exit')
+    if (!loader) return
+    loader.classList.add('page-loader-exit')
 
-    const handleAnimationEnd = () => el.remove()
+    const handleAnimationEnd = () => loader.remove()
 
-    el.addEventListener('animationend', handleAnimationEnd)
+    loader.addEventListener('animationend', handleAnimationEnd)
 
     // Clean up
     return () => {
-      el.removeEventListener('animationend', handleAnimationEnd)
+      loader.removeEventListener('animationend', handleAnimationEnd)
     }
   }, [])
 

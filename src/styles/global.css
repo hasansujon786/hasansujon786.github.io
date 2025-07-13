@@ -94,58 +94,6 @@
   text-shadow: none !important;
 }
 
-/* ------------------------------------------------ */
-/* -- backgrounnd color & blob -------------------- */
-/* ------------------------------------------------ */
-.landingpage {
-  margin: 0 auto;
-  position: relative;
-  background-color: var(--color-ground);
-}
-.landingpage::before {
-  content: '';
-  position: absolute;
-  width: 123px;
-  height: 123px;
-  left: 60%;
-  top: 210px;
-  filter: blur(90px);
-  background-color: var(--color-glow-pink);
-}
-.landingpage::after {
-  content: '';
-  position: absolute;
-  width: 123px;
-  height: 123px;
-  right: 5%;
-  top: 550px;
-  background-color: var(--color-glow-cyan);
-  filter: blur(80px);
-}
-.cta-wrapper {
-  position: relative;
-}
-.cta-wrapper::before {
-  content: '';
-  position: absolute;
-  width: 123px;
-  height: 123px;
-  right: 5%;
-  top: -50px;
-  filter: blur(110px);
-  background-color: var(--color-glow-pink);
-}
-.cta-wrapper::after {
-  content: '';
-  position: absolute;
-  width: 123px;
-  height: 123px;
-  left: 5%;
-  bottom: -50px;
-  background-color: var(--color-glow-cyan);
-  filter: blur(130px);
-}
-
 ._ > *:not(path):not(g) {
   color: hsla(210, 100%, 100%, 0.9) !important;
   background: hsla(210, 100%, 50%, 0.5) !important;

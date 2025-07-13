@@ -22,7 +22,7 @@ const HeaderLink = (props: Props) => {
 const Header = (props: {}) => {
   return (
     <header
-      className='bg-ground/80 fixed top-0 z-40 mx-auto w-full flex-none border-b md:backdrop-blur-sm dark:border-b-0'
+      className='animate-slide-in opacity-0 slide-from-top bg-ground/80  fixed top-0 z-40 mx-auto w-full flex-none border-b md:backdrop-blur-sm dark:border-b-0'
       id='header'
     >
       <div className='container py-1'>

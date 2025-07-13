@@ -84,8 +84,8 @@ const ProjectShowcase = () => {
 
 export const Project = ({ owner, title, subtitle, details, tags, links, image }: ProjectProps) => {
   return (
-    <div className='animate-in-blur animate-in-from-bottom flex flex-col gap-8 py-12 lg:flex-row lg:py-24'>
-      <section className='w-full lg:w-1/3'>
+    <div className='flex flex-col gap-8 py-12 lg:flex-row lg:py-24'>
+      <section className='animate-slide-in slide-from-bottom w-full lg:w-1/3'>
         <div className='space-y-4 lg:mt-6'>
           <SectionTag uppercase={true} title={owner} />
           <div>
@@ -105,7 +105,7 @@ export const Project = ({ owner, title, subtitle, details, tags, links, image }:
           <div className='flex gap-5 pt-5'>{links}</div>
         </div>
       </section>
-      <section className='flex-1 justify-end lg:flex'>
+      <section className='animate-slide-in slide-from-bottom flex-1 justify-end lg:flex'>
         <div className='bg-level-100 ring-accent-dark aspect-video w-full overflow-hidden rounded-lg ring-3'>
           <img className='h-full w-full object-cover' {...image} />
         </div>

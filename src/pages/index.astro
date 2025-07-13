@@ -1,5 +1,5 @@
 ---
-import CallToAction from '../components/widgets/CallToAction'
+import CallToAction from '../components/widgets/CallToAction.astro'
 import Footer from '../components/widgets/Footer'
 import Header from '../components/widgets/Header'
 import Hero from '../components/widgets/Hero'
@@ -9,10 +9,10 @@ import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout>
-  <main class=''>
-    <Header />
-    <PageLoader />
-    <section class='animate-in-blur animate-in-from-bottom min-h-[200dvh]'>
+  <PageLoader />
+  <Header />
+  <main class='animate-blur-in'>
+    <section class='animate-slide-in slide-from-bottom min-h-[200dvh]'>
       <Hero client:only='react' />
     </section>
     <ProjectShowcase />
@@ -22,21 +22,39 @@ import Layout from '../layouts/Layout.astro'
 </Layout>
 
 <style is:global>
-  .animate-in-blur {
-    filter: blur(8px);
+  .animate-blur-in {
+    filter: blur(6px);
   }
-  .animate-in-blur-enter {
+  .animate-blur-in-enter {
     animation: blur-fade-in 300ms ease-out forwards;
   }
 
-  .animate-in-blur.animate-in-from-bottom {
+  .animate-slide-in-enter {
+    animation: animate-slide-in 300ms ease-out forwards;
+  }
+  .slide-from-bottom {
     transform: translateY(30px);
+  }
+  .slide-from-top {
+    transform: translateY(-10px);
+  }
+  .slide-from-left {
+    transform: translateX(-30px);
+  }
+  .slide-from-right {
+    transform: translateX(30px);
   }
 
   @keyframes blur-fade-in {
     to {
       filter: blur(0);
-      transform: translateY(0) translateX(0);
+    }
+  }
+
+  @keyframes animate-slide-in {
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
     }
   }
 </style>

@@ -1,0 +1,49 @@
+---
+import { MY_EMAIL, MY_EMAIL_HREF } from '../../config/constants'
+---
+
+<div class='animate-slide-in slide-from-bottom cta-wrapper'>
+  <div class='container my-10'>
+    <div class='mx-auto max-w-4xl rounded-3xl py-12 text-center'>
+      <p class='text-accent text-base font-extrabold tracking-wide uppercase sm:text-xl'>Ready to Join Your Team</p>
+      <h3
+        aria-label="Let's build together"
+        class='font font-heading mt-6 text-5xl font-semibold uppercase sm:text-7xl lg:text-[5.5rem]'
+        style={{ lineHeight: 0.95 }}
+      >
+        LET’S W🚀RK <br /> T_G_TH_R
+      </h3>
+      <div class='mt-10'>
+        <a class='hover:text-accent text-xl text-zinc-300/80 underline underline-offset-2' href={MY_EMAIL_HREF}>
+          {MY_EMAIL}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cta-wrapper {
+    position: relative;
+  }
+  .cta-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 123px;
+    height: 123px;
+    right: 5%;
+    top: -50px;
+    filter: blur(110px);
+    background-color: var(--color-glow-pink);
+  }
+  .cta-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 123px;
+    height: 123px;
+    left: 5%;
+    bottom: -50px;
+    background-color: var(--color-glow-cyan);
+    filter: blur(130px);
+  }
+</style>
