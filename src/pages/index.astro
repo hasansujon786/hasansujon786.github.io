@@ -26,11 +26,13 @@ import Layout from '../layouts/Layout.astro'
     filter: blur(6px);
   }
   .animate-blur-in-enter {
-    animation: blur-fade-in 300ms ease-out forwards;
+    animation: blur-fade-in 300ms ease-in-out forwards;
+    animation-delay: var(--loader-delay);
   }
 
   .animate-slide-in-enter {
-    animation: animate-slide-in 300ms ease-out forwards;
+    animation: animate-slide-in 300ms ease-in-out forwards;
+    animation-delay: var(--loader-delay);
   }
   .slide-from-bottom {
     transform: translateY(30px);

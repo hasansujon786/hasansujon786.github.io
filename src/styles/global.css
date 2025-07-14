@@ -1,12 +1,8 @@
 @import 'tailwindcss';
 
-@layer components {
-  .container {
-    @apply mx-auto max-w-7xl px-4 sm:px-6;
-  }
-  .o {
-    outline-style: solid;
-  }
+:root {
+  --loader-time: 1000ms;
+  --loader-delay: 800ms;
 }
 
 /* #6f6fe7 */
@@ -24,6 +20,15 @@
   --animate-aurora: aurora 8s ease-out infinite alternate;
   --animate-marquee: marquee var(--duration, 20s) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration, 20s) infinite linear;
+}
+
+@layer components {
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6;
+  }
+  .o {
+    outline-style: solid;
+  }
 }
 
 @utility container {

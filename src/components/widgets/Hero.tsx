@@ -34,22 +34,23 @@ export const Intro = (props: ProspWithClassName) => {
 export const Description = (props: ProspWithClassName) => {
   return (
     <div className={cn(props.className)}>
-      <div className='mt-3 max-w-md space-y-3 text-sm leading-normal tracking-wide text-gray-200 md:text-base lg:max-w-xl lg:space-y-5 lg:text-lg'>
+      <div className='mt-3 space-y-2 text-sm leading-normal tracking-wide text-gray-300 lg:space-y-4 lg:text-base 2xl:text-[17px]'>
         <p>
-          I’m Hasan — a software developer based in Bangladesh with 3+ years of hands-on experience delivering
-          high-quality web and mobile applications as a freelancer.
+          Hi, I’m Hasan — a software developer based in <span className='font-medium text-white'>Bangladesh</span> with over 3 years of experience building polished, high-performance{' '}
+          <span className='font-medium text-white'>web and mobile apps</span> as a freelancer.
         </p>
 
         <p>
-          I specialize in <span className='decoration-text underline'>React</span>,{' '}
-          <span className='decoration-text underline'>React Native</span> and{' '}
-          <span className='decoration-text underline'>Flutter</span> with a strong focus on performance, accessibility,
-          and clean UI design.
+          I specialize in <span className='font-medium text-white'>React</span>,{' '}
+          <span className='font-medium text-white'>React Native</span> and{' '}
+          <span className='font-medium text-white'>Flutter,</span> and I care deeply about crafting smooth, accessible
+          user experiences and writing clean, maintainable code that scales.
         </p>
 
         <p>
-          I'm currently freelancing and actively seeking a full-time opportunity where I can contribute to meaningful
-          products and grow with a team.
+          I’m currently freelancing and actively seeking a{' '}
+          <span className='font-semibold text-white'>full-time frontend or mobile developer role</span>, where I can
+          contribute to meaningful products and grow with a creative, collaborative team.
         </p>
       </div>
       <div className='outlin mt-10 inline-flex flex-wrap justify-center gap-6'>
@@ -82,11 +83,10 @@ const Hero = () => {
     document.querySelectorAll('.animate-slide-in').forEach((el) => el?.classList.add('animate-slide-in-enter'))
 
     if (!loader) return
-    loader.classList.add('page-loader-exit')
-
     const handleAnimationEnd = () => loader.remove()
-
     loader.addEventListener('animationend', handleAnimationEnd)
+
+    loader.classList.add('page-loader-exit')
 
     // Clean up
     return () => {
@@ -97,17 +97,17 @@ const Hero = () => {
   return (
     <section ref={container}>
       <ScrollHero.Hero scrollYProgress={scrollYProgress}>
-        <div className='container mt-16 flex flex-1 sm:mt-20 md:mt-24 lg:mt-0 lg:items-center'>
-          <div className=''>
+        <div className='container mt-16 flex flex-1 sm:mt-20 md:mt-24 lg:-mt-8 lg:items-center'>
+          <div className='w-full lg:max-w-[60ch]'>
             <Intro />
-            <Description className='col-start-1 row-start-2' />
+            <Description />
           </div>
         </div>
       </ScrollHero.Hero>
 
       <ScrollHero.Content scrollYProgress={scrollYProgress}>
-        <div className='container pt-20 md:pt-32 2xl:pt-42'>
-          <h1 className='text-5xl text-white md:text-6xl'>Technology Stack</h1>
+        <div className='container pt-10 md:pt-18 2xl:pt-28'>
+          <h1 className='text-3xl font-medium text-white md:text-4xl'>Technology Stack</h1>
         </div>
         <MyStack />
 

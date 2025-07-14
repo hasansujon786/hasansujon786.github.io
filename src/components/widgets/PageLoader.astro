@@ -1,19 +1,21 @@
 <div class='page-loader bg-ground fixed inset-0 z-50 flex h-screen flex-col items-center justify-center text-white'>
-  <span class='loading wave text-3xl font-bold lg:text-6xl'>loading</span>
+  <span class='loading wave -mt-8 text-3xl font-bold lg:-mt-16 lg:text-6xl 2xl:text-7xl'>Hasan</span>
 </div>
 
 <style>
   .page-loader-exit {
     /* display: none; */
-    animation: fadeOut 300ms ease-out forwards;
+    animation: fadeOut var(--loader-time) ease-out forwards;
   }
 
   @keyframes fadeOut {
-    10% {
-      opacity: 0;
+    90% {
+      opacity: 1;
+      filter: blur(0px);
     }
     to {
       opacity: 0;
+      filter: blur(6px);
     }
   }
 
@@ -52,7 +54,7 @@
     text-shadow: 0px 0px rgba(255, 255, 255, 0.06);
     animation:
       wave-animation 1s infinite linear,
-      loading-animation 1s infinite linear alternate;
+      loading-animation 2s infinite linear alternate;
     background-size: 200px 100px;
     background-repeat: repeat-x;
     opacity: 1;

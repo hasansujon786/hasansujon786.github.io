@@ -33,10 +33,7 @@ const stacks = {
 const StackIcon = ({ url, title }: { url: string; title: string }) => {
   return (
     <div className='flex flex-col items-center justify-center gap-2'>
-      <div
-        key={title}
-        className='flex h-20 w-20 items-center justify-center rounded-2xl border border-zinc-800 bg-gradient-to-b p-6 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)]'
-      >
+      <div className='flex h-16 w-16 items-center justify-center rounded-2xl border border-zinc-800 bg-gradient-to-b p-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] md:h-20 md:w-20 md:p-6'>
         <img src={url} alt={title} className='h-12 w-12' />
       </div>
       <span className='text-sm whitespace-nowrap'>{title}</span>

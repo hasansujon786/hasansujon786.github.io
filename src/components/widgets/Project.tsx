@@ -89,7 +89,7 @@ export const Project = ({ owner, title, subtitle, details, tags, links, image }:
         <div className='space-y-4 lg:mt-6'>
           <SectionTag uppercase={true} title={owner} />
           <div>
-            <h2 className='text-5xl text-white md:text-6xl'>{title}</h2>
+            <h2 className='text-3xl font-medium text-white md:text-4xl xl:text-5xl'>{title}</h2>
             <p className='mt-1 text-base text-zinc-500'>{subtitle}</p>
           </div>
           <div className='space-y-2'>

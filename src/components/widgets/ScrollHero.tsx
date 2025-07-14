@@ -9,18 +9,18 @@ export const HeroWrapper: React.FC<SectionProps> = ({ scrollYProgress, children 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8])
   const rotate = useTransform(scrollYProgress, [0, 1], [0, -5])
   return (
-    <motion.section style={{ scale, rotate }} className='sticky top-0 flex h-screen flex-col'>
+    <motion.section style={{ scale, rotate }} className='sticky top-0 flex h-dvh flex-col overflow-hidden'>
       {children}
     </motion.section>
   )
 }
 
 export const ContentWrapper: React.FC<SectionProps> = ({ scrollYProgress, children }) => {
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1])
-  const rotate = useTransform(scrollYProgress, [0, 1], [5, 0])
+  const scale = useTransform(scrollYProgress, [0, 0.9], [0.8, 1])
+  const rotate = useTransform(scrollYProgress, [0, 0.9], [5, 0])
 
   return (
-    <motion.section style={{ scale, rotate }} className='bg-level-100 relative flex min-h-screen flex-col'>
+    <motion.section style={{ scale, rotate }} className='bg-level-100 relative flex min-h-dvh flex-col'>
       {children}
     </motion.section>
   )
