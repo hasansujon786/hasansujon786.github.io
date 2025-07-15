@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { Marquee } from './marquee'
 
 const stacks = {
@@ -33,7 +34,12 @@ const stacks = {
 const StackIcon = ({ url, title }: { url: string; title: string }) => {
   return (
     <div className='flex flex-col items-center justify-center gap-2'>
-      <div className='flex h-16 w-16 items-center justify-center rounded-2xl border border-zinc-800 bg-gradient-to-b p-4 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] md:h-20 md:w-20 md:p-6'>
+      <div
+        className={cn(
+          'flex h-16 w-16 items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 md:h-20 md:w-20 md:p-6',
+          'hover:shadow-glow hover:ring-glow-pink/50 shadow-glow-pink/30 bg-gradient-to-b ring-1 ring-zinc-800 hover:ring-1'
+        )}
+      >
         <img src={url} alt={title} className='h-12 w-12' />
       </div>
       <span className='text-sm whitespace-nowrap'>{title}</span>

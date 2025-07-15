@@ -5,7 +5,7 @@ const varients = {
   outlined: { bu: 'bg-transparent text-zinc-300 border-zinc-300 hover:bg-zinc-300 hover:text-black' },
   translusant: { bu: 'bg-[#282537] border-gray-700 hover:bg-gray-700/50 hover:border-gray-700' },
   solid: { bu: 'bg-black border-black hover:bg-gray-900 hover:border-gray-900' },
-  'solid-green': { bu: 'text-gray-800 bg-accent border-accent hover:bg-accent-light hover:border-accent-light' },
+  'solid-green': { bu: 'text-gray-800 bg-primary border-primary hover:bg-primary-light hover:border-primary-light' },
   text: { bu: 'text-zinc-400 border-transparent hover:text-zinc-300' },
 }
 

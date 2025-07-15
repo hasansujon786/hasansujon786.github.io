@@ -7,13 +7,16 @@
 
 /* #6f6fe7 */
 @theme {
-  --color-accent: #05c391;
-  --color-accent-light: #57dcb4;
-  --color-accent-dark: #00835b;
+  --color-primary: #05c391;
+  --color-primary-light: #57dcb4;
+  --color-primary-dark: #00835b;
+  --color-accent: #f6be2b;
   --color-level-100: #15151e;
   --color-ground: #1f1d2b;
   --color-glow-pink: #fb37ff;
   --color-glow-cyan: #18b2de;
+
+  --shadow-glow: 0 0px 30px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1));
 
   --font-sans: 'Poppins', sans-serif;
 
@@ -93,7 +96,7 @@
 }
 
 ::selection {
-  background-color: #f6be2b !important;
+  background-color: var(--color-accent) !important;
   color: white !important;
   -webkit-text-fill-color: white !important;
   text-shadow: none !important;

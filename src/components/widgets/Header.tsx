@@ -10,7 +10,7 @@ const HeaderLink = (props: Props) => {
   return (
     <li className='px-4 py-2'>
       <a
-        className='hover:text-accent-light text-sm font-medium uppercase transition duration-150 ease-in-out'
+        className='hover:text-primary-light text-sm font-medium uppercase transition duration-150 ease-in-out'
         href={props.path}
       >
         {props.children}

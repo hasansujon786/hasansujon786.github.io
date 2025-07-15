@@ -1,0 +1,60 @@
+---
+import imgSmacrCV from '../../assets/smart-cv.png'
+import imgSmacrQR from '../../assets/smart-qr.png'
+import imgSaweria from '../../assets/saweria.co.png'
+import Project, { type Props as ProjectProps } from './Project.astro'
+
+const projects: ProjectProps[] = [
+  {
+    owner: 'Built for Client',
+    title: 'Smart CV',
+    subtitle: 'Full App Development',
+    tags: ['React Native', 'Expo', 'Tamagui'],
+    details: [
+      'A mobile app for creating stunning, job-ready resumes in minutes.',
+      'It helps users generate polished, professional CVs with clean templates and an intuitive user experience — no design skills required.',
+    ],
+    imageSrc: imgSmacrCV.src,
+    links: {
+      demo: { label: 'View on Play Store', link: 'https://play.google.com/store/apps/details?id=com.thinknxtmedia.smartcv' },
+      github: { link: 'https://github.com/hasansujon786/smart-cv' },
+    },
+  },
+  {
+    owner: 'Built for Client',
+    title: 'Smart QR',
+    subtitle: 'Designed & Developed',
+    tags: ['Flutter', 'Dart', 'hive database'],
+    details: [
+      'A fast, reliable mobile app for scanning and generating QR codes and barcodes with ease.',
+      'Designed with simplicity and speed in mind, it supports all major code formats and custom QR creation — all in a clean, intuitive interface.',
+    ],
+    imageSrc: imgSmacrQR.src,
+    links: {
+      demo: { label: 'View on Play Store', link: 'https://play.google.com/store/apps/details?id=com.thinknxtmedia.smart_qr' },
+      github: { link: 'https://github.com/hasansujon786/smart-qr' },
+    },
+  },
+  {
+    owner: 'Built for Client',
+    title: 'saweria.co',
+    subtitle: 'Developed Frontend',
+    tags: ['React', 'typescript', 'Next.js', 'TailwindCSS'],
+    details: [
+      'A platform that makes it easy for you to reach your fans directly along with your community',
+      "Creator's dane gives creators the tools they need to reliably reach their fans, strengthen their communities, and build sustainable businesses.",
+    ],
+    imageSrc: imgSaweria.src,
+    links: {
+      demo: { label: 'Visit Website', link: 'https://saweria.co/en' },
+      github: { link: 'https://github.com/hasansujon786/saweria.co' },
+    },
+  },
+]
+---
+
+<div id='project_showcase' class='container'>
+  <div class='divide-y-2 divide-zinc-800 border-y-2 border-zinc-800'>
+    {projects.map((p) => <Project {...p} />)}
+  </div>
+</div>

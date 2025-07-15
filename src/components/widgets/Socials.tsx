@@ -8,7 +8,7 @@ const SocialIcon = ({ children, title }: { children: React.ReactNode; title: str
       href='#'
       className={cn(
         'group/icon relative rounded-sm p-2 ring-white focus-visible:outline-none focus-visible:ring-2',
-        'transition-colors hover:text-accent'
+        'hover:text-primary'
       )}
     >
       <div
@@ -18,7 +18,7 @@ const SocialIcon = ({ children, title }: { children: React.ReactNode; title: str
           'transition-transform group-hover/icon:translate-x-0 group-hover/icon:scale-100'
         )}
       >
-        <div className='bg-accent-dark py-0.5 px-[5px] text-base capitalize leading-none'>{title}</div>
+        <div className='bg-primary-dark py-0.5 px-[5px] text-base capitalize leading-none'>{title}</div>
       </div>
       {children}
     </a>

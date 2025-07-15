@@ -1,8 +1,8 @@
+import type { ProspWithClassName } from '@/lib/types'
+import { cn } from '@/lib/utils'
 import { useScroll } from 'motion/react'
 import { useEffect, useRef } from 'react'
 import { FiPaperclip } from 'react-icons/fi'
-import type { ProspWithClassName } from '../../lib/types'
-import { cn } from '../../lib/utils'
 import Button from '../atoms/Button'
 import SectionTag from '../atoms/SectionTag'
 import { AuroraText } from './aurora-text'
@@ -25,8 +25,8 @@ export const Intro = (props: ProspWithClassName) => {
       </div>
 
       <div className='mt-1 flex items-baseline gap-0.5'>
-        <p className='text-accent z-10 text-2xl font-semibold tracking-wide'>Frontend Developer</p>
-        <div className='bg-accent-dark h-1 w-1'></div>
+        <p className='text-primary z-10 text-2xl font-semibold tracking-wide'>Frontend Developer</p>
+        <div className='bg-primary-dark h-1 w-1'></div>
       </div>
     </div>
   )
@@ -36,7 +36,8 @@ export const Description = (props: ProspWithClassName) => {
     <div className={cn(props.className)}>
       <div className='mt-3 space-y-2 text-sm leading-normal tracking-wide text-gray-300 lg:space-y-4 lg:text-base 2xl:text-[17px]'>
         <p>
-          Hi, I’m Hasan — a software developer based in <span className='font-medium text-white'>Bangladesh</span> with over 3 years of experience building polished, high-performance{' '}
+          Hi, I’m Hasan — a software developer based in <span className='font-medium text-white'>Bangladesh</span> with
+          over 3 years of experience building polished, high-performance{' '}
           <span className='font-medium text-white'>web and mobile apps</span> as a freelancer.
         </p>
 
@@ -57,13 +58,6 @@ export const Description = (props: ProspWithClassName) => {
         <Button className='px-8' varient='solid-green' icon={<FiPaperclip size={18} />}>
           View my resume
         </Button>
-
-        {/* <ProjectLink href={MY_EMAIL_HREF}> */}
-        {/*   <div className='flex items-center gap-1.5 text-base'> */}
-        {/*     <FiSend size={18} /> */}
-        {/*     {MY_EMAIL} */}
-        {/*   </div> */}
-        {/* </ProjectLink> */}
       </div>
     </div>
   )
