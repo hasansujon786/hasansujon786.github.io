@@ -3,18 +3,20 @@ import { MY_EMAIL, MY_EMAIL_HREF } from '../../config/constants'
 import Link from '../atoms/Link.astro'
 ---
 
-<div class='animate-slide-in slide-from-bottom cta-wrapper'>
-  <div class='container my-10'>
-    <div class='mx-auto max-w-4xl rounded-3xl py-12 text-center'>
-      <p class='text-primary text-base font-extrabold tracking-wide uppercase sm:text-xl'>Ready to Join Your Team</p>
+<div class='cta-wrapper'>
+  <div class='container py-20'>
+    <div class='animate-on-scroll mx-auto max-w-4xl rounded-3xl text-center'>
+      <p class='stagger fade-in-up text-primary text-base font-extrabold tracking-wide uppercase sm:text-xl'>
+        Ready to Join Your Team
+      </p>
       <h3
         aria-label="Let's build together"
-        class='font font-heading mt-6 text-5xl font-semibold uppercase sm:text-7xl lg:text-[5.5rem]'
+        class='stagger fade-in-up mt-6 text-5xl font-semibold uppercase sm:text-7xl lg:text-[5.5rem]'
         style={{ lineHeight: 0.95 }}
       >
         LET’S W🚀RK <br /> T_G_TH_R
       </h3>
-      <div class='mt-6 md:mt-8 lg:mt-10'>
+      <div class='stagger fade-in-up mt-6 md:mt-8 lg:mt-10'>
         <Link href={MY_EMAIL_HREF} class='text-xl text-zinc-300'>{MY_EMAIL}</Link>
       </div>
     </div>
