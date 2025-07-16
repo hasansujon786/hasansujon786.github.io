@@ -65,26 +65,24 @@ export function MyStack() {
   }))
 
   return (
-    <section className='container pt-8 md:pt-18 2xl:pt-28'>
+    <section className='container pt-8 md:pt-12 2xl:pt-0'>
       <div className='animate-on-scroll'>
-        <h1 className='fade-in-up stagger text-3xl font-medium text-white md:text-4xl'>Technology Stack</h1>
+        <h1 className='fade-in-up stagger z-10 relative text-3xl font-medium text-white md:text-4xl'>Technology Stack</h1>
 
-        <div className='relative'>
-          <div className='mx-0.5 mt-12 space-y-5'>
-            <div className='fade-in-up stagger'>
-              <Marquee className=''>
-                {firstRow.map((item) => (
-                  <StackIcon key={item.title} {...item} />
-                ))}
-              </Marquee>
-            </div>
-            <div className='fade-in-up stagger'>
-              <Marquee className='' reverse>
-                {secondRow.map((item) => (
-                  <StackIcon key={item.title} {...item} />
-                ))}
-              </Marquee>
-            </div>
+        <div className='relative mx-0.5 mt-8'>
+          <div className='fade-in-up stagger'>
+            <Marquee className='utline'>
+              {firstRow.map((item) => (
+                <StackIcon key={item.title} {...item} />
+              ))}
+            </Marquee>
+          </div>
+          <div className='fade-in-up stagger'>
+            <Marquee className='' reverse>
+              {secondRow.map((item) => (
+                <StackIcon key={item.title} {...item} />
+              ))}
+            </Marquee>
           </div>
 
           <div className='from-ground pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r'></div>

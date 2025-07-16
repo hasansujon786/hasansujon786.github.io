@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+/* Custom local styles */
+@import './base.css';
+@import './animations.css';
+
 :root {
   --loader-time: 1000ms;
   --loader-delay: 800ms;
@@ -25,15 +29,6 @@
   --animate-marquee-vertical: marquee-vertical var(--duration, 20s) infinite linear;
 }
 
-@layer components {
-  .container {
-    @apply mx-auto max-w-7xl px-4 sm:px-6;
-  }
-  .o {
-    outline-style: solid;
-  }
-}
-
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
@@ -41,70 +36,4 @@
   @media (width >= theme(--breakpoint-2xl)) {
     padding-inline: 4rem;
   }
-}
-
-@keyframes aurora {
-  0% {
-    background-position: 0;
-    transform: rotate(-5deg) scale(0.9);
-  }
-  25% {
-    background-position: 50% 100%;
-    transform: rotate(5deg) scale(1.1);
-  }
-  50% {
-    background-position: 100%;
-    transform: rotate(-3deg) scale(0.95);
-  }
-  75% {
-    background-position: 50% 0;
-    transform: rotate(3deg) scale(1.05);
-  }
-  to {
-    background-position: 0;
-    transform: rotate(-5deg) scale(0.9);
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
-  }
-}
-
-@keyframes marquee-vertical {
-  0% {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
-  }
-}
-
-.animate-aurora {
-  background-image: linear-gradient(
-    135.01deg,
-    #ff3337 -0.04%,
-    #f8ca53 38%,
-    #f8ca53 50%,
-    rgb(5 195 145 / 80%) 90.71%,
-    #ff3337 117%
-  );
-}
-
-::selection {
-  background-color: var(--color-accent) !important;
-  color: white !important;
-  -webkit-text-fill-color: white !important;
-  text-shadow: none !important;
-}
-
-._ > *:not(path):not(g) {
-  color: hsla(210, 100%, 100%, 0.9) !important;
-  background: hsla(210, 100%, 50%, 0.5) !important;
-  outline: solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
-  box-shadow: none !important;
 }

@@ -2,7 +2,7 @@ import { cn } from '../../lib/utils'
 
 const varients = {
   // gradient: { bu: 'gradient-bg', sp: 'bg-opacity-95 group-hover:bg-opacity-80 ', },
-  outlined: { bu: 'bg-transparent text-zinc-300 border-zinc-300 hover:bg-zinc-300 hover:text-black' },
+  outlined: { bu: 'bg-transparent text-zinc-400 border-zinc-400 hover:bg-zinc-300 hover:text-black' },
   translusant: { bu: 'bg-[#282537] border-gray-700 hover:bg-gray-700/50 hover:border-gray-700' },
   solid: { bu: 'bg-black border-black hover:bg-gray-900 hover:border-gray-900' },
   'solid-green': { bu: 'text-gray-800 bg-primary border-primary hover:bg-primary-light hover:border-primary-light' },
@@ -28,7 +28,7 @@ const Button = ({ children, varient = 'solid-green', size = 'base', icon, ...pro
   return (
     <button
       className={cn(
-        `group cursor-pointer inline-flex transform capitalize items-center gap-x-2 rounded-full border font-semibold tracking-wide transition-transform ease-out active:scale-95`,
+        `group cursor-pointer inline-flex capitalize transform items-center justify-center gap-x-2 rounded-full border font-semibold tracking-wide transition-transform ease-out active:scale-95`,
         varients[varient].bu,
         sizes[size].bu,
         props.className

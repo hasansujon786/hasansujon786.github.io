@@ -1,0 +1,16 @@
+---
+interface Props {
+  href: string
+  target?: string
+}
+
+const { href, target } = Astro.props
+---
+
+<a
+  href={href}
+  target={target}
+  class='grid h-12 w-12 cursor-pointer place-items-center rounded-full transition-colors duration-200 hover:bg-white/5 active:bg-white/5'
+>
+  <slot />
+</a>

@@ -6,7 +6,7 @@ import Project, { type Props as ProjectProps } from './Project.astro'
 
 const projects: ProjectProps[] = [
   {
-    owner: 'Built for Client',
+    owner: 'Featured Project',
     title: 'Smart CV',
     subtitle: 'Full App Development',
     tags: ['React Native', 'Expo', 'Tamagui'],
@@ -21,7 +21,7 @@ const projects: ProjectProps[] = [
     },
   },
   {
-    owner: 'Built for Client',
+    owner: 'Featured Project',
     title: 'Smart QR',
     subtitle: 'Designed & Developed',
     tags: ['Flutter', 'Dart', 'hive database'],
@@ -36,7 +36,7 @@ const projects: ProjectProps[] = [
     },
   },
   {
-    owner: 'Built for Client',
+    owner: 'Featured Project',
     title: 'saweria.co',
     subtitle: 'Developed Frontend',
     tags: ['React', 'typescript', 'Next.js', 'TailwindCSS'],
@@ -53,7 +53,7 @@ const projects: ProjectProps[] = [
 ]
 ---
 
-<div id='project_showcase' class='container pt-10 md:pt-18 2xl:pt-28'>
+<div id='featured-projects' class='container pt-10 md:pt-18 2xl:pt-28'>
   <div class='divide-y-2 divide-zinc-800 border-y-2 border-zinc-800'>
     {projects.map((p) => <Project {...p} />)}
   </div>

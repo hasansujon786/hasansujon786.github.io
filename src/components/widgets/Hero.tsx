@@ -7,8 +7,8 @@ import { AuroraText } from './aurora-text'
 
 const Hero = () => {
   return (
-    <section data-stagger='30' className='animate-on-scroll container flex min-h-screen flex-1 lg:items-center'>
-      <div className='w-full pt-20 md:pt-24 lg:pt-0 lg:max-w-[60ch]'>
+    <section id='home' data-stagger='30' className='animate-on-scroll container flex min-h-screen flex-1 lg:items-center'>
+      <div className='w-full pt-8 max-w-[60ch] lg:pt-0 lg:-mt-10'>
         <Intro />
         <Description />
       </div>
@@ -41,7 +41,7 @@ export const Intro = (props: ProspWithClassName) => {
 export const Description = (props: ProspWithClassName) => {
   return (
     <div className={cn(props.className)}>
-      <div className='mt-3 space-y-2 text-sm leading-normal tracking-wide text-gray-300 lg:space-y-4 lg:text-base 2xl:text-[17px]'>
+      <div className='mt-3 space-y-2 text-sm leading-normal tracking-wide text-gray-300 lg:space-y-4 md:text-base 2xl:text-[17px]'>
         <p className='stagger fade-in-up'>
           Hi, I’m Hasan — a software developer based in <span className='font-medium text-white'>Bangladesh</span> with
           over 3 years of experience building polished, high-performance{' '}
@@ -61,8 +61,8 @@ export const Description = (props: ProspWithClassName) => {
           contribute to meaningful products and grow with a creative, collaborative team.
         </p>
       </div>
-      <div className='stagger fade-in-up mt-10 inline-flex flex-wrap justify-center gap-6'>
-        <Button className='px-8' varient='solid-green' icon={<FiPaperclip size={18} />}>
+      <div className='stagger fade-in-up item-center pt-6 xl:pt-8 flex flex-col flex-wrap gap-6 sm:flex-row'>
+        <Button className='sm:px-10' varient='solid-green' icon={<FiPaperclip size={18} />}>
           View my resume
         </Button>
       </div>

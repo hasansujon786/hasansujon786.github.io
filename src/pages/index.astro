@@ -1,5 +1,6 @@
 ---
 import ProjectShowcase from '@/components/widgets/ProjectShowcase.astro'
+import Navbar from '@/components/widgets/Navbar.astro'
 import CallToAction from '../components/widgets/CallToAction.astro'
 import Footer from '../components/widgets/Footer.astro'
 import Header from '../components/widgets/Header'
@@ -12,7 +13,8 @@ import { MyStack } from '@/components/widgets/MyStack'
 <Layout>
   <PageLoader />
   <Header />
-  <main class="overflow-hidden">
+  <Navbar />
+  <main class='overflow-hidden'>
     <Hero />
     <MyStack />
     <ProjectShowcase />
@@ -34,77 +36,37 @@ import { MyStack } from '@/components/widgets/MyStack'
     })
   }, options)
 
-  // Hide page loader
+  const handleAnimationEnd = (loader: Element | null) => {
+    // Run entrance animation
+    document.querySelectorAll('.animate-on-load').forEach((el) => el.classList.add('animate-on-load-enter'))
+
+    // Set IntersectionObserver for Animate-on-scroll
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      // Get stagger delay
+      const staggerValue = el.getAttribute('data-stagger')
+      const delay = staggerValue !== null ? Number(staggerValue) : 100
+
+      el.querySelectorAll('.stagger').forEach((child, i) => {
+        child.style.transitionDelay = `${delay * i}ms`
+      })
+
+      observer.observe(el)
+    })
+
+    loader?.remove()
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     const loader = document.querySelector('.page-loader')
 
-    const handleAnimationEnd = () => {
-      document.querySelectorAll('.animate-on-load').forEach((el) => el?.classList.add('animate-on-load-enter'))
-
-      document.querySelectorAll('.animate-on-scroll').forEach((el) => {
-        // Add delay for stagger childs
-        el.querySelectorAll('.stagger').forEach((child, i) => {
-          const attr = el.getAttribute('data-stagger')
-          const delay = attr !== null ? Number(attr) : 100
-          child.style.transitionDelay = `${delay * i}ms`
-        })
-        observer.observe(el)
-      })
-
-      loader?.remove()
-    }
-
+    // Start entrance animation immediately if no loader is found
     if (!loader) {
-      handleAnimationEnd()
-      return
+      return handleAnimationEnd(null)
     }
-    loader.addEventListener('animationend', handleAnimationEnd)
+    // Wait for loader animation to end then start entrance animation
+    loader.addEventListener('animationend', () => handleAnimationEnd(loader))
 
+    // Run page-loader exit animatin
     loader.classList.add('page-loader-exit')
   })
 </script>
-
-<style is:global>
-  .animate-on-scroll,
-  .animate-on-scroll .stagger {
-    opacity: 0;
-    filter: blur(3px);
-    visibility: hidden;
-    transition: all var(--tw-duration, 1s) cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  .animate-on-scroll.animate-on-scroll-enter,
-  .animate-on-scroll.animate-on-scroll-enter .stagger {
-    opacity: 1;
-    filter: blur(0px);
-    visibility: visible;
-    transform: translate(0);
-  }
-
-  .fade-in-up {
-    transform: translateY(100px);
-  }
-  .fade-in-down {
-    transform: translateY(-50px);
-  }
-  .fade-in-left {
-    transform: translateX(100px);
-  }
-  .fade-in-right {
-    transform: translateX(-100px);
-  }
-
-  .animate-on-load {
-    opacity: 0;
-  }
-  .animate-on-load-enter {
-    animation: animate-on-load 300ms ease-in-out forwards;
-  }
-  @keyframes animate-on-load {
-    to {
-      opacity: 1;
-      filter: blur(0);
-      transform: translate(0, 0);
-    }
-  }
-</style>
