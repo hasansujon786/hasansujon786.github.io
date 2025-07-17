@@ -53,7 +53,7 @@ const images: Record<string, string> = import.meta.glob('/src/assets/stacks/*.sv
   eager: true,
 })
 
-export function MyStack() {
+function MyStack() {
   const firstRow = stacks.firstRow.map((stack) => ({
     ...stack,
     url: images[`/src/assets/stacks/${stack.img}`],
@@ -92,3 +92,4 @@ export function MyStack() {
     </section>
   )
 }
+export default MyStack

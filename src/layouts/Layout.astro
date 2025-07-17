@@ -1,6 +1,6 @@
 ---
 import { TwCurrentScreenName } from '../components/widgets/utils'
-import "@/styles/global.css"
+import '@/styles/global.css'
 ---
 
 <!doctype html>
@@ -25,7 +25,7 @@ import "@/styles/global.css"
   <TwCurrentScreenName />
 </html>
 
-<style>
+<style is:global>
   .landingpage {
     margin: 0 auto;
     position: relative;
@@ -50,5 +50,29 @@ import "@/styles/global.css"
     top: 550px;
     background-color: var(--color-glow-cyan);
     filter: blur(80px);
+  }
+
+  .cta-wrapper {
+    position: relative;
+  }
+  .cta-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 123px;
+    height: 123px;
+    right: 5%;
+    top: -50px;
+    filter: blur(110px);
+    background-color: var(--color-glow-pink);
+  }
+  .cta-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 123px;
+    height: 123px;
+    left: 5%;
+    bottom: -50px;
+    background-color: var(--color-glow-cyan);
+    filter: blur(130px);
   }
 </style>

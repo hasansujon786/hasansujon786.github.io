@@ -1,8 +1,7 @@
----
 import imgSmacrCV from '../../assets/smart-cv.png'
 import imgSmacrQR from '../../assets/smart-qr.png'
 import imgSaweria from '../../assets/saweria.co.png'
-import Project, { type Props as ProjectProps } from './Project.astro'
+import Project, { type ProjectProps } from './Project'
 
 const projects: ProjectProps[] = [
   {
@@ -16,7 +15,10 @@ const projects: ProjectProps[] = [
     ],
     imageSrc: imgSmacrCV.src,
     links: {
-      demo: { label: 'View on Play Store', link: 'https://play.google.com/store/apps/details?id=com.thinknxtmedia.smartcv' },
+      demo: {
+        label: 'View on Play Store',
+        link: 'https://play.google.com/store/apps/details?id=com.thinknxtmedia.smartcv',
+      },
       github: { link: 'https://github.com/hasansujon786/smart-cv' },
     },
   },
@@ -31,7 +33,10 @@ const projects: ProjectProps[] = [
     ],
     imageSrc: imgSmacrQR.src,
     links: {
-      demo: { label: 'View on Play Store', link: 'https://play.google.com/store/apps/details?id=com.thinknxtmedia.smart_qr' },
+      demo: {
+        label: 'View on Play Store',
+        link: 'https://play.google.com/store/apps/details?id=com.thinknxtmedia.smart_qr',
+      },
       github: { link: 'https://github.com/hasansujon786/smart-qr' },
     },
   },
@@ -51,10 +56,17 @@ const projects: ProjectProps[] = [
     },
   },
 ]
----
 
-<div id='featured-projects' class='container pt-10 md:pt-18 2xl:pt-28'>
-  <div class='divide-y-2 divide-zinc-800 border-y-2 border-zinc-800'>
-    {projects.map((p) => <Project {...p} />)}
-  </div>
-</div>
+const ProjectShowcase = () => {
+  return (
+    <div id='featured-projects' className='container pt-10 md:pt-18 2xl:pt-28'>
+      <div className='divide-y-2 divide-zinc-800 border-y-2 border-zinc-800'>
+        {projects.map((p) => (
+          <Project key={p.title} {...p} />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default ProjectShowcase

@@ -24,6 +24,8 @@
 
   --font-sans: 'Poppins', sans-serif;
 
+  --ease-quick: cubic-bezier(0.23, 1, 0.32, 1);
+
   --animate-aurora: aurora 8s ease-out infinite alternate;
   --animate-marquee: marquee var(--duration, 20s) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration, 20s) infinite linear;
