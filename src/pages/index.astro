@@ -56,6 +56,17 @@ import { MyStack } from '@/components/widgets/MyStack'
     loader?.remove()
   }
 
+  const setScrolled = (didScrolled: boolean) => {
+    const header = document.getElementById('header')
+    if (!header) return
+
+    if (didScrolled) {
+      header.classList.add('border-b', 'shadow-xl')
+    } else {
+      header.classList.remove('border-b', 'shadow-xl')
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     const loader = document.querySelector('.page-loader')
 
@@ -68,5 +79,11 @@ import { MyStack } from '@/components/widgets/MyStack'
 
     // Run page-loader exit animatin
     loader.classList.add('page-loader-exit')
+
+    // Run header shadow animation
+    setScrolled(window.scrollY >= 30)
+    window.addEventListener('scroll', () => {
+      setScrolled(window.scrollY >= 30)
+    })
   })
 </script>

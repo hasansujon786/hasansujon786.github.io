@@ -37,7 +37,7 @@ const StackIcon = ({ url, title }: { url: string; title: string }) => {
       <div
         className={cn(
           'flex h-16 w-16 items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 md:h-20 md:w-20 md:p-6',
-          'hover:shadow-glow hover:ring-glow-pink/50 shadow-glow-pink/30 bg-gradient-to-b ring-1 ring-zinc-800 hover:ring-1'
+          'hover:shadow-glow hover:ring-primary-dark shadow-primary-dark/40 bg-gradient-to-b ring-1 ring-zinc-800 hover:ring-2'
         )}
       >
         <img src={url} alt={title} className='h-12 w-12' />
@@ -71,7 +71,7 @@ export function MyStack() {
 
         <div className='relative mx-0.5 mt-8'>
           <div className='fade-in-up stagger'>
-            <Marquee className='utline'>
+            <Marquee>
               {firstRow.map((item) => (
                 <StackIcon key={item.title} {...item} />
               ))}

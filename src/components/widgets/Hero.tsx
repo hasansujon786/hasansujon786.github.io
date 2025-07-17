@@ -8,7 +8,7 @@ import { AuroraText } from './aurora-text'
 const Hero = () => {
   return (
     <section id='home' data-stagger='30' className='animate-on-scroll container flex min-h-screen flex-1 lg:items-center'>
-      <div className='w-full pt-8 max-w-[60ch] lg:pt-0 lg:-mt-10'>
+      <div className='w-full py-8 max-w-[60ch] lg:py-18'>
         <Intro />
         <Description />
       </div>

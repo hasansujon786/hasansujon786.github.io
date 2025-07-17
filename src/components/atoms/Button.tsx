@@ -1,4 +1,6 @@
+import type React from 'react'
 import { cn } from '../../lib/utils'
+import type { PropsWithChildren } from 'react'
 
 const varients = {
   // gradient: { bu: 'gradient-bg', sp: 'bg-opacity-95 group-hover:bg-opacity-80 ', },
@@ -16,27 +18,40 @@ const sizes = {
   lg: { bu: 'px-9 py-3.5 text-base' },
 }
 
-interface Props {
-  children: React.ReactNode
+interface ButtonBaseProps extends PropsWithChildren {
   icon?: React.ReactNode
   varient?: keyof typeof varients
   size?: keyof typeof sizes
   className?: string
 }
 
-const Button = ({ children, varient = 'solid-green', size = 'base', icon, ...props }: Props) => {
+type ButtonProps =
+  | ({ as?: 'button' } & React.ButtonHTMLAttributes<HTMLButtonElement> & ButtonBaseProps)
+  | ({ as: 'a' } & React.AnchorHTMLAttributes<HTMLAnchorElement> & ButtonBaseProps)
+
+const Button = ({
+  children,
+  varient = 'solid-green',
+  size = 'base',
+  icon,
+  as: Tag = 'button',
+  className,
+  ...props
+}: ButtonProps) => {
   return (
-    <button
+    <Tag
       className={cn(
-        `group cursor-pointer inline-flex capitalize transform items-center justify-center gap-x-2 rounded-full border font-semibold tracking-wide transition-transform ease-out active:scale-95`,
+        'group inline-flex transform cursor-pointer items-center justify-center gap-x-2 rounded-full border font-semibold tracking-wide capitalize transition-transform ease-out active:scale-95',
+        'focus-visible:ring-primary ring-offset-ground ring-offset-3 focus-visible:ring-2 focus-visible:outline-none',
         varients[varient].bu,
         sizes[size].bu,
-        props.className
+        className
       )}
+      {...(props as any)}
     >
       {icon && <span>{icon}</span>}
       <span>{children}</span>
-    </button>
+    </Tag>
   )
 }
 export default Button

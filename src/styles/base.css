@@ -3,7 +3,7 @@ html {
 }
 
 ::selection {
-  background-color: var(--color-accent) !important;
+  background-color: var(--color-primary-dark) !important;
   color: white !important;
   -webkit-text-fill-color: white !important;
   text-shadow: none !important;
