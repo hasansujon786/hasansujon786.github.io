@@ -1,5 +1,5 @@
 ---
-import { TwCurrentScreenName } from '../components/widgets/utils'
+import { TwScreenSize } from '@/components/widgets/utils'
 import '@/styles/global.css'
 ---
 
@@ -21,8 +21,7 @@ import '@/styles/global.css'
   <body class='landingpage min-h-screen overflow-y-scroll tracking-tight text-zinc-900 antialiased dark:text-slate-200'>
     <slot />
   </body>
-
-  <TwCurrentScreenName />
+  {import.meta.env.DEV && <TwScreenSize />}
 </html>
 
 <style is:global>

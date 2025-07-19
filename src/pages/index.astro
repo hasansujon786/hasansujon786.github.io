@@ -82,8 +82,6 @@ import ProjectShowcase from '@/components/widgets/ProjectShowcase'
 
     // Run header shadow animation
     setScrolled(window.scrollY >= 30)
-    window.addEventListener('scroll', () => {
-      setScrolled(window.scrollY >= 30)
-    })
+    window.addEventListener('scroll', () => setScrolled(window.scrollY >= 30))
   })
 </script>

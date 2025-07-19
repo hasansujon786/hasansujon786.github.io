@@ -1,5 +1,5 @@
 
-export const TwCurrentScreenName = (props: {}) => {
+export const TwScreenSize = () => {
   return (
     <div className='fixed bg-red-500 text-white rounded-sm bottom-3 right-3 w-8 h-8 grid place-items-center'>
       <p style={{ fontSize: '16px' }}>
