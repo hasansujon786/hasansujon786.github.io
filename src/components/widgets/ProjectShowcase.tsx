@@ -19,7 +19,7 @@ const projects: ProjectProps[] = [
         label: 'View on Play Store',
         link: 'https://play.google.com/store/apps/details?id=com.thinknxtmedia.smartcv',
       },
-      github: { link: 'https://github.com/hasansujon786/smart-cv' },
+      // github: { link: 'https://github.com/hasansujon786/smart-cv' },
     },
   },
   {
