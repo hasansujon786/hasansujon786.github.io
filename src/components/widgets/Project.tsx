@@ -43,7 +43,7 @@ const Project = ({ owner, title, subtitle, details, tags, imageSrc, links }: Pro
           <div className='mt-5 flex flex-wrap gap-2 sm:gap-5'>
             {links?.github?.link && (
               <div className='fade-in-right stagger'>
-                <Link href={links?.github?.link} target='_blank'>
+                <Link href={links?.github?.link} target='_blank' rel='noopener noreferrer'>
                   <FiGithub />
                   {links?.github?.label || 'View Source Code'}
                 </Link>
@@ -51,7 +51,7 @@ const Project = ({ owner, title, subtitle, details, tags, imageSrc, links }: Pro
             )}
             {links?.demo?.link && (
               <div className='fade-in-right stagger'>
-                <Link href={links?.demo?.link} target='_blank'>
+                <Link href={links?.demo?.link} target='_blank' rel='noopener noreferrer'>
                   <FiExternalLink />
                   {links?.demo?.label || 'Visit Website'}
                 </Link>

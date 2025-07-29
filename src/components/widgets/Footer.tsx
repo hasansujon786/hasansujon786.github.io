@@ -7,13 +7,13 @@ const Footer = () => {
     <footer className='bg-level-100 flex flex-col items-center justify-center border-t border-t-zinc-800 py-12'>
       <div className='flex flex-col items-center justify-center gap-2'>
         <div className='flex gap-0 text-xl text-zinc-500'>
-          <IconLink href={MY_GITHUB} target='_blank'>
+          <IconLink href={MY_GITHUB} target='_blank' rel='noopener noreferrer'>
             <FiGithub />
           </IconLink>
-          <IconLink href={MY_LINKED_IN}>
+          <IconLink href={MY_LINKED_IN} rel='noopener noreferrer'>
             <FiLinkedin />
           </IconLink>
-          <IconLink href={MY_EMAIL_HREF}>
+          <IconLink href={MY_EMAIL_HREF} rel='noopener noreferrer'>
             <FiMail />
           </IconLink>
         </div>

@@ -19,7 +19,7 @@ const Navbar = () => {
             <FiMail />
           </IconLink>
           <span className='gap ease-quick h-3 w-0.5 transition-all' />
-          <IconLink label='Github' target='_blank' href={MY_GITHUB}>
+          <IconLink label='Github' target='_blank' href={MY_GITHUB} rel='noopener noreferrer'>
             <FiGithub />
           </IconLink>
         </div>

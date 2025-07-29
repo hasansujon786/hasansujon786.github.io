@@ -52,7 +52,7 @@ const projects: ProjectProps[] = [
     imageSrc: imgSaweria.src,
     links: {
       demo: { label: 'Visit Website', link: 'https://saweria.co/en' },
-      github: { link: 'https://github.com/hasansujon786/saweria.co' },
+      github: { link: 'https://github.com/hasansujon786/saweria.co-nextjs' },
     },
   },
 ]
