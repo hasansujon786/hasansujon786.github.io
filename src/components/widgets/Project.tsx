@@ -34,7 +34,7 @@ const Project = ({ owner, title, subtitle, details, tags, imageSrc, links }: Pro
             ))}
           </div>
 
-          <div className='flex flex-wrap gap-x-6 gap-y-2 sm:gap-x-10'>
+          <div className='flex flex-wrap mt-8 gap-x-6 gap-y-2 sm:gap-x-10'>
             {tags.map((tag) => (
               <p key={tag} className='fade-in-right stagger text-sm text-zinc-500'>{tag}</p>
             ))}

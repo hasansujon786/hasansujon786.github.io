@@ -5,7 +5,7 @@ import Project, { type ProjectProps } from './Project'
 
 const projects: ProjectProps[] = [
   {
-    owner: 'Featured Project',
+    owner: 'Built for client',
     title: 'Smart CV',
     subtitle: 'Full App Development',
     tags: ['React Native', 'Expo', 'Tamagui'],
@@ -23,7 +23,7 @@ const projects: ProjectProps[] = [
     },
   },
   {
-    owner: 'Featured Project',
+    owner: 'Built for client',
     title: 'Smart QR',
     subtitle: 'Designed & Developed',
     tags: ['Flutter', 'Dart', 'hive database'],
@@ -41,7 +41,7 @@ const projects: ProjectProps[] = [
     },
   },
   {
-    owner: 'Featured Project',
+    owner: 'Built for client',
     title: 'saweria.co',
     subtitle: 'Developed Frontend',
     tags: ['React', 'typescript', 'Next.js', 'TailwindCSS'],

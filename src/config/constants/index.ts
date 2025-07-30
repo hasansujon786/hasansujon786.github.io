@@ -3,3 +3,4 @@ export const MY_EMAIL_HREF = `mailto:${MY_EMAIL}`
 
 export const MY_GITHUB = 'https://github.com/hasansujon786'
 export const MY_LINKED_IN = 'https://www.linkedin.com/in/hasansujon786/'
+export const MY_JOB_TITLE = 'Softwere Developer'

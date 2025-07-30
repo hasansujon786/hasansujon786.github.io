@@ -4,6 +4,7 @@ import { FiPaperclip } from 'react-icons/fi'
 import Button from '../atoms/Button'
 import SectionTag from '../atoms/SectionTag'
 import { AuroraText } from './aurora-text'
+import { MY_JOB_TITLE } from '@/config/constants'
 
 const Hero = () => {
   return (
@@ -36,7 +37,7 @@ export const Intro = (props: ProspWithClassName) => {
       </div>
 
       <div className='stagger fade-in-up mt-1 flex items-baseline gap-0.5'>
-        <p className='text-primary z-10 text-2xl font-semibold tracking-wide'>Frontend Developer</p>
+        <p className='text-primary z-10 text-2xl font-semibold tracking-wide'>{MY_JOB_TITLE}</p>
         <div className='bg-primary-dark h-1 w-1'></div>
       </div>
     </div>
